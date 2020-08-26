@@ -1,3 +1,6 @@
+(let ((%nltk-hash-result '"0d28rfnvxlxi7cq0zzcpcln3c6l1f2kipmgbpcab6gcq3nbzjq96")
+      (%pygraphviz-hash-result '"0s1mw2r0dpra92r2pkxplwl5a2bkjyarrq2i5cs5df1wyk3qj9j8
+"))
 (define-module (cna-python packages)
   #:use-module (guix packages)
   #:use-module (guix download)
@@ -119,4 +122,5 @@
               (file-name (string-append "pygraphviz-" version "-checkout"))
               (sha256
                (base32
-                %pygraphviz-hash-result))))))
+                %pygraphviz-hash-result))))))                    
+)
