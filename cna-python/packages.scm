@@ -94,3 +94,29 @@
     (description
      "Louvain algorithm for community detection")
     (license license:bsd-3)))
+
+
+(define-public cna-python-nltk
+  (package (inherit python-nltk)
+           (version "3.2.5")
+           (source (origin
+                     (method url-fetch)
+                     (uri (pypi-uri "nltk" version))
+                     (sha256
+                      (base32
+                       %nltk-hash-result))))))
+                                                                      
+
+(define-public cna-python-pygraphviz
+  (package (inherit python-pygraphviz)
+           (version "1.3")
+           (source
+            (origin
+              (method git-fetch)
+              (uri (git-reference
+                    (url "https://github.com/pygraphviz/pygraphviz")
+                    (commit (string-append "pygraphviz-" version))))
+              (file-name (string-append "pygraphviz-" version "-checkout"))
+              (sha256
+               (base32
+                %pygraphviz-hash-result))))))
