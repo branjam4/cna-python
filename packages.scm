@@ -1,6 +1,3 @@
-(let ((%nltk-hash-result '"0d28rfnvxlxi7cq0zzcpcln3c6l1f2kipmgbpcab6gcq3nbzjq96")
-      (%pygraphviz-hash-result '"0s1mw2r0dpra92r2pkxplwl5a2bkjyarrq2i5cs5df1wyk3qj9j8
-"))
 (define-module (cna-python packages)
   #:use-module (guix packages)
   #:use-module (guix download)
@@ -96,30 +93,3 @@
     (description
       "Louvain algorithm for community detection")
     (license license:bsd-3)))
-
-
-(define-public cna-python-nltk
-  (package (inherit python-nltk)
-           (version "3.2.5")
-           (source (origin
-                     (method url-fetch)
-                     (uri (pypi-uri "nltk" version))
-                     (sha256
-                      (base32
-                       %nltk-hash-result))))))
-
-
-(define-public cna-python-pygraphviz
-  (package (inherit python-pygraphviz)
-           (version "1.3")
-           (source
-            (origin
-              (method git-fetch)
-              (uri (git-reference
-                    (url "https://github.com/pygraphviz/pygraphviz")
-                    (commit (string-append "pygraphviz-" version))))
-              (file-name (string-append "pygraphviz-" version "-checkout"))
-              (sha256
-               (base32
-                %pygraphviz-hash-result))))))                    
-)
