@@ -5,25 +5,25 @@
   #:use-module (guix build-system python)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages graphviz)
-  #:use-module ((guix licenses) #:prefix license:))
+  #:use-module ((guix licenses) #:prefix license:))             
 
 (define-public python-wikipedia
   (package
     (name "python-wikipedia")
     (version "1.4.0")
     (source
-     (origin
-       (method url-fetch)
-       (uri (pypi-uri "wikipedia" version))
-       (sha256
-        (base32
-         "1cikc7ibi2qc5vfrcabdg304s84qcf2yj1i3hnql3m7x54cas3yv"))))
+      (origin
+        (method url-fetch)
+        (uri (pypi-uri "wikipedia" version))
+        (sha256
+          (base32
+            "1cikc7ibi2qc5vfrcabdg304s84qcf2yj1i3hnql3m7x54cas3yv"))))
     (build-system python-build-system)
     (propagated-inputs
-     `(("python-beautifulsoup4" ,python-beautifulsoup4)
-       ("python-requests" ,python-requests)))
+      `(("python-beautifulsoup4" ,python-beautifulsoup4)
+        ("python-requests" ,python-requests)))
     (home-page
-     "https://github.com/goldsmith/Wikipedia")
+      "https://github.com/goldsmith/Wikipedia")
     (synopsis "Wikipedia API for Python")
     (description "Wikipedia API for Python")
     (license license:expat)))
@@ -34,19 +34,20 @@
     (name "python-toposort")
     (version "1.5")
     (source
-     (origin
-       (method url-fetch)
-       (uri (pypi-uri "toposort" version))
-       (sha256
-        (base32
-         "1papqmv5930xl3d5mx2drnwdxg7y1y3l1ij2n0vvzqwnaa2ax9fv"))))
-    (build-system python-build-system))(home-page
-     "https://bitbucket.org/ericvsmith/toposort")
+      (origin
+        (method url-fetch)
+        (uri (pypi-uri "toposort" version))
+        (sha256
+          (base32
+            "1papqmv5930xl3d5mx2drnwdxg7y1y3l1ij2n0vvzqwnaa2ax9fv"))))
+    (build-system python-build-system)
+    (home-page
+      "https://bitbucket.org/ericvsmith/toposort")
     (synopsis
-     "Implements a topological sort algorithm.")
+      "Implements a topological sort algorithm.")
     (description
-     "Implements a topological sort algorithm.")
-    (license #f))
+      "Implements a topological sort algorithm.")
+    (license #f)))
 
 
 (define-public python-community
